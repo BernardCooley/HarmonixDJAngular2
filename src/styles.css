@@ -1,1 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    /* background: linear-gradient(#915656, #878758); */
+    font-family: "arial", "Times New Roman", Georgia, Serif;
+}
