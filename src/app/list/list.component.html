@@ -1,16 +1,37 @@
 <div class="listContainer">
   <table class="table">
     <thead>
+      <tr *ngIf="showTitle" class="tableRow">
+        <td><h3>Artist</h3></td>
+        <td><h3>Title</h3></td>
+        <td><h3>Key</h3></td>
+      </tr>
     </thead>
     <tbody>
       <tr class="tableRow" *ngFor="let track of tracks">
-        <div class="col-xs-10">
-          <h3 class="row artist">{{track.artist}}</h3>
-          <h4 class="row title">{{track.title}}</h4>
-        </div>
-        <div class="col-xs-2">
-          <h2>{{track.key}}</h2>
-        </div>
+        <td>
+          <div class="col-xs-8">
+            <h3 class="row artist">{{track.artist}}</h3>
+            <h4 class="row track">{{track.title}}</h4>
+          </div>
+          <div class="col-xs-2">
+            <h3 class="col-xs-6 key">{{track.key}}</h3>
+          </div>
+          <div class="col-xs-2 optionsColumn">
+            <button class="listButton" (click)="addToLiveSet($event)">
+                <svg fill="#003366" height="35" viewBox="0 0 24 24" width="35" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+                  <path d="M0 0h24v24H0z" fill="none"/>
+              </svg>
+            </button>
+            <button class="listButton" (click)="trackMenu($event)">
+                <svg fill="#003366" height="24" viewBox="0 0 24 24" width="35" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+              </svg>
+            </button>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>

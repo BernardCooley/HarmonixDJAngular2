@@ -1,6 +1,12 @@
 body {
     font-family: "arial", "Times New Roman", Georgia, Serif;
-    background-color: lightblue;
+    /* background-color: lightblue; */
+    /* background-image: url("/assets/images/beach.jpg") no-repeat center center fixed; */
+    background: url(/assets/images/beach.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .loginRegLinks {

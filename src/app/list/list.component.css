@@ -7,6 +7,26 @@
 }
 
 .listContainer {
-    width: 90%;
+    width: 100%;
     margin: auto;
+}
+
+.key {
+    float: right;
+}
+
+.listButton {
+    background: none;
+    text-align: left;
+    outline: 0;
+    border: 0;
+}
+
+.optionsColumn {
+    top: 14px;
+}
+
+.tableRow {
+    background-color: rgba(215, 241, 248, 0.50);
+    color: #000044;
 }

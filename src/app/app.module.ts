@@ -40,7 +40,7 @@ const appRoutes: Routes = [
     RegisterComponent,
     TrackManagementComponent,
     SetManagementComponent,
-    ListComponent,
+    ListComponent
     ],
   imports: [
     BrowserModule,
