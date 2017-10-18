@@ -11,8 +11,8 @@ import { RegisterComponent } from './register/register.component';
 import { TrackManagementComponent } from './track-management/track-management.component';
 import { SetManagementComponent } from './set-management/set-management.component';
 import { FocusModule } from 'angular2-focus';
-import { SlideMenuModule } from 'cuppa-ng2-slidemenu/cuppa-ng2-slidemenu';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SlideMenuModule } from './custom_node_modules/cuppa-ng2-slidemenu/cuppa-ng2-slidemenu';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -36,7 +36,7 @@ const appRoutes: Routes = [
     RegisterComponent,
     TrackManagementComponent,
     SetManagementComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
