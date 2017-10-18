@@ -5,14 +5,3 @@
 h2 {
     text-align: center;
 }
-
-input {
-    height: 50px;
-}
-
-#loginBtn {
-    width: 80%;
-    text-align: center;
-    margin:auto;
-    display:block;
-}

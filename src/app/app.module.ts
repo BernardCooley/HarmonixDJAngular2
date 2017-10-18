@@ -12,6 +12,7 @@ import { TrackManagementComponent } from './track-management/track-management.co
 import { SetManagementComponent } from './set-management/set-management.component';
 import {FocusModule} from 'angular2-focus';
 import { SlideMenuModule } from 'cuppa-ng2-slidemenu/cuppa-ng2-slidemenu';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -40,7 +41,9 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FocusModule.forRoot(),
-    SlideMenuModule
+    SlideMenuModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

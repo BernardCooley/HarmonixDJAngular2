@@ -1,4 +1,12 @@
 body {
-    /* background: linear-gradient(#915656, #878758); */
     font-family: "arial", "Times New Roman", Georgia, Serif;
+}
+
+.loginRegLinks {
+    font-size: 15px;
+    color: gray;
+}
+
+input {
+  height: 50px;
 }
