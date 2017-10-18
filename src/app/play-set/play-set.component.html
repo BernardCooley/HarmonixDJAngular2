@@ -1,7 +1,59 @@
 <div class="container" ng-show="true">
-	<h1 class="">Set List</h1>
+	<br>
+	<h2 class="">Play Set</h2>
+	<br>
 
-	<button class="btn btn-success" ng-click="saveNewSetlist()">Save Setlist</button>
+	<form #form="ngForm" (ngSubmit)="submitForm(form.value)" novalidate>
+		<div class="form-group">
+			<input class="form-control" type="text" focus="true" ng-model name="fName" required placeholder="Search for: track name/artist/key">
+		</div>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Artist</th>
+					<th>Track</th>
+					<th>Key</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="redBox" *ngFor="let track of tracks">
+					<div class="col-xs-10">
+						<div class="row artist">{{track.artist}}</div>
+						<div class="row title">{{track.title}}</div>
+					</div>
+					<div class="col-xs-2">
+						<div>{{track.key}}</div>
+					</div>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+		<!-- <div class="form-group">
+			<input class="form-control" type="text" focus="true" ng-model name="lName" required placeholder="Last Name">
+		</div>
+		<div class="form-group">
+			<input class="form-control" type="text" focus="true" ng-model name="email" required placeholder="Email">
+		</div>
+		<div class="form-group">
+			<input class="form-control" type="text" focus="true" ng-model name="username" required placeholder="Username">
+		</div>
+		<div class="form-group">
+			<input class="form-control" type="text" focus="true" ng-model name="password" required placeholder="Password">
+		</div>
+		<div class="form-group">
+			<input class="form-control" type="text" focus="true" ng-model name="confirmPassword" required placeholder="Confirm Password">
+		</div>
+
+		<br>
+		<button id="registerBtn" class="btn btn-info" type="submit">Register</button>
+		<br> -->
+	</form>
+
+
+	<!-- <button class="btn btn-success" ng-click="saveNewSetlist()">Save Setlist</button>
 
 	<form name="form" novalidate>
 		<table class="table">
@@ -24,8 +76,6 @@
 			</tbody>
 		</table>
 	</form>
-
-
 
 	<input class="form-control searchBox" type="text" name="search" ng-model="searchText" placeholder="Search">
 	<input class="form-control searchBox" type="text" name="search" ng-model="track" placeholder="Compatible Keys">
@@ -53,8 +103,7 @@
 				</tr>
 			</tbody>
 		</table>
-	</form>
-
+	</form> -->
 
 </div>
 <br><br>

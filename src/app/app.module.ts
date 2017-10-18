@@ -10,7 +10,7 @@ import { PlaySetComponent } from './play-set/play-set.component';
 import { RegisterComponent } from './register/register.component';
 import { TrackManagementComponent } from './track-management/track-management.component';
 import { SetManagementComponent } from './set-management/set-management.component';
-import {FocusModule} from 'angular2-focus';
+import { FocusModule } from 'angular2-focus';
 import { SlideMenuModule } from 'cuppa-ng2-slidemenu/cuppa-ng2-slidemenu';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 

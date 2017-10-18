@@ -12,22 +12,24 @@ export class HeaderComponent implements OnInit {
 
   constructor(public router: Router) {
     this.menuItemsArray = [
-      {"title": "Login", "link": "/login"},
-      {"title": "Help", "link": "/help"},
-      {"title": "Play Set", "link": "/playSet"},
-      {"title": "Register", "link": "/register"},
-      {"title": "Track Management", "link": "/trackManagement"},
-      {"title": "Set Management", "link": "/setManagement"},
+      { 'title': 'Login', 'link': '/login' },
+      { 'title': 'Register', 'link': '/register' },
+      { 'title': 'Play Set', 'link': '/playSet'},
+      { 'title': 'Track Management', 'link': '/trackManagement'},
+      { 'title': 'Set Management', 'link': '/setManagement' },
+      { 'title': 'Help', 'link': '/help' }
     ]
   }
 
-  public onMenuClose(){
-    console.log("menu closed");
+  public onMenuClose() {
+    console.log('menu closed');
   }
-  public onMenuOpen(){
-    console.log("menu Opened");
+
+  public onMenuOpen() {
+    console.log('menu Opened');
   }
-  private onItemSelect(item:any){
+
+  private onItemSelect(item: any) {
     console.log(item);
     this.router.navigate([item.link]);
   }

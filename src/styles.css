@@ -1,5 +1,6 @@
 body {
     font-family: "arial", "Times New Roman", Georgia, Serif;
+    background-color: lightblue;
 }
 
 .loginRegLinks {
@@ -7,6 +8,6 @@ body {
     color: gray;
 }
 
-input {
-  height: 50px;
+.redBox {
+    border: 1px solid red;
 }

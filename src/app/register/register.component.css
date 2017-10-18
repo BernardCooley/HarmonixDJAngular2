@@ -5,3 +5,7 @@
 h2 {
   text-align: center;
 }
+
+input {
+  height: 50px;
+}
