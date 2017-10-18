@@ -11,3 +11,21 @@ body {
 .redBox {
     border: 1px solid red;
 }
+
+.sticky {
+    position: fixed;
+}
+
+input {
+    width: 90%;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 20px;
+    line-height: 20px;
+}
+
+input[type="text"]
+{
+    font-size:20px;
+}

@@ -13,6 +13,10 @@ import { SetManagementComponent } from './set-management/set-management.componen
 import { FocusModule } from 'angular2-focus';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SlideMenuModule } from './custom_node_modules/cuppa-ng2-slidemenu/cuppa-ng2-slidemenu';
+import { MatListModule } from '@angular/material';
+import { ListComponent } from './list/list.component';
+import { ListService } from './services/list/list.service';
+import { HttpModule } from '@angular/http';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -35,7 +39,8 @@ const appRoutes: Routes = [
     PlaySetComponent,
     RegisterComponent,
     TrackManagementComponent,
-    SetManagementComponent
+    SetManagementComponent,
+    ListComponent,
     ],
   imports: [
     BrowserModule,
@@ -43,9 +48,11 @@ const appRoutes: Routes = [
     FocusModule.forRoot(),
     SlideMenuModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatListModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [ListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

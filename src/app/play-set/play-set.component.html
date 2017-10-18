@@ -1,109 +1,13 @@
 <div class="container" ng-show="true">
 	<br>
-	<h2 class="">Play Set</h2>
+	<h2 class="pageTitle">Play Set</h2>
 	<br>
-
 	<form #form="ngForm" (ngSubmit)="submitForm(form.value)" novalidate>
 		<div class="form-group">
-			<input class="form-control" type="text" focus="true" ng-model name="fName" required placeholder="Search for: track name/artist/key">
+			<input class="form-control" type="text" focus="true" ng-model name="fName" required placeholder="Search: name/artist/key">
 		</div>
-
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Artist</th>
-					<th>Track</th>
-					<th>Key</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class="redBox" *ngFor="let track of tracks">
-					<div class="col-xs-10">
-						<div class="row artist">{{track.artist}}</div>
-						<div class="row title">{{track.title}}</div>
-					</div>
-					<div class="col-xs-2">
-						<div>{{track.key}}</div>
-					</div>
-				</tr>
-			</tbody>
-		</table>
-
-
-
-		<!-- <div class="form-group">
-			<input class="form-control" type="text" focus="true" ng-model name="lName" required placeholder="Last Name">
-		</div>
-		<div class="form-group">
-			<input class="form-control" type="text" focus="true" ng-model name="email" required placeholder="Email">
-		</div>
-		<div class="form-group">
-			<input class="form-control" type="text" focus="true" ng-model name="username" required placeholder="Username">
-		</div>
-		<div class="form-group">
-			<input class="form-control" type="text" focus="true" ng-model name="password" required placeholder="Password">
-		</div>
-		<div class="form-group">
-			<input class="form-control" type="text" focus="true" ng-model name="confirmPassword" required placeholder="Confirm Password">
-		</div>
-
-		<br>
-		<button id="registerBtn" class="btn btn-info" type="submit">Register</button>
-		<br> -->
 	</form>
-
-
-	<!-- <button class="btn btn-success" ng-click="saveNewSetlist()">Save Setlist</button>
-
-	<form name="form" novalidate>
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Artist</th>
-					<th>Title</th>
-					<th>Key</th>
-					<th>Action</th>
-					<th>&nbsp;</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="setTrack in setlist" ng-click="clicked">
-					<td><h4>setTrack.Artist</h4></td>
-					<td><h4>setTrack.Title</h4></td>
-					<td><h4>setTrack.Key</h4></td>
-					<td><button class="btn btn-success" ng-click="removeFromSL(setTrack._id)">Remove from set list</button></td>
-				</tr>
-			</tbody>
-		</table>
-	</form>
-
-	<input class="form-control searchBox" type="text" name="search" ng-model="searchText" placeholder="Search">
-	<input class="form-control searchBox" type="text" name="search" ng-model="track" placeholder="Compatible Keys">
-	<input class="form-control searchBox" type="text" name="search" ng-model="user" placeholder="User" value="Harri">
-	<br>
-	<form name="form" novalidate>
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Artist</th>
-					<th>Title</th>
-					<th>Key</th>
-					<th>Action</th>
-					<th>User</th>
-					<th>&nbsp;</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="track in tracks.data | filter:searchText | filter:user | filter:track | orderBy : 'Key'" ng-click="clicked">
-					<td><h4>track.Artist</h4></td>
-					<td><h4>track.Title</h4></td>
-					<td><h4>track.Key</h4></td>
-					<td><button class="btn btn-success" ng-click="addToSL(track._id); showCompTracks(track._id)">Add to set list</button></td>
-					<td><h4>track.User</h4></td>
-				</tr>
-			</tbody>
-		</table>
-	</form> -->
-
+	
 </div>
-<br><br>
+
+<app-list name="tracks"></app-list>

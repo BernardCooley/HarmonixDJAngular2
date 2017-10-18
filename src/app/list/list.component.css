@@ -1,0 +1,12 @@
+.tableRow {
+    border-bottom: 1px solid gray;
+}
+
+.pageTitle {
+    text-align: center;
+}
+
+.listContainer {
+    width: 90%;
+    margin: auto;
+}

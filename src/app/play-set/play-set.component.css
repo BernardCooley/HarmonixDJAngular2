@@ -1,5 +1,6 @@
 .container {
   font-size: 25px;
+  width: 80%;
 }
 
 h2 {
@@ -14,7 +15,7 @@ th {
     text-align: center;
 }
 
-  .title {
+.title {
 
     font-size: 25px;
 }
