@@ -12,6 +12,8 @@ body {
 .loginRegLinks {
     font-size: 15px;
     color: gray;
+    position: absolute;
+    bottom: 10px;
 }
 
 .redBox {
@@ -34,4 +36,29 @@ input::-webkit-input-placeholder {
 input[type="text"]
 {
     font-size:20px;
+}
+
+.pageTitle {
+    text-align: center;
+}
+
+.clearfix {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.ListName {
+    text-align: center;
+    position: relative;
+    top: 10px;
+    background-color: rgba(162, 210, 240, 0.62);
+    line-height: 50px;
+}
+
+.searchInput {
+    margin-bottom: 0;
 }

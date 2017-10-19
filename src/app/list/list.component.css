@@ -29,4 +29,9 @@
 .tableRow {
     background-color: rgba(215, 241, 248, 0.50);
     color: #000044;
+    border-bottom: 2px solid gray;
+}
+
+.tableBody {
+    border-top:2px solid gray;
 }

@@ -1,19 +1,16 @@
 <div class="container" ng-show="true">
-	<br>
 	<h2 class="pageTitle">Play Set</h2>
-	<br>
-
-	
-
-	<form #form="ngForm" (ngSubmit)="submitForm(form.value)" novalidate>
-		<div class="form-group">
-			<input class="form-control" type="text" focus="true" ng-model name="fName" required placeholder="Search: name/artist/key">
-		</div>
-	</form>
-	
 </div>
-<h3>Current Set</h3>
-<app-list listName="currentSet"></app-list>
-
-<h3>All Tracks</h3>
-<app-list listName="allTracks"></app-list>
+<div class="ListNameContainer">
+		<h3 class="ListName">Current Set</h3>
+	<app-list listName="currentSet"></app-list>
+</div>
+<div class="ListNameContainer">
+		<h3 class="ListName">All Tracks</h3>
+		<form #form="ngForm" (ngSubmit)="submitForm(form.value)" novalidate>
+	<div class="form-group searchInput">
+		<input class="form-control" type="text" focus="true" ng-model name="fName" required placeholder="Search: name/artist/key">
+	</div>
+</form>
+	<app-list listName="allTracks"></app-list>
+</div>
