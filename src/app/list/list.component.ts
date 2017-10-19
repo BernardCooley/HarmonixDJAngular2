@@ -34,7 +34,6 @@ export class ListComponent implements OnInit {
 
   loadList(listNameIn: string) {
     if(listNameIn == 'currentSet') {
-      console.log('currentSet selected');
       this.list = [
         { 'id': 1, 'title': 'Acidic Sky', 'artist': 'Tape Twelve', 'key': '11B' },
         { 'id': 2, 'title': 'Man with the red face', 'artist': 'Laurent Garnier', 'key': '05A' },
@@ -42,7 +41,6 @@ export class ListComponent implements OnInit {
       ]
     }
     else if (listNameIn == 'allTracks') {
-      console.log('allTracks selected');
       this.list = [
         { 'id': 14, 'title': 'Man with the red face', 'artist': 'Laurent Garnier', 'key': '05A' },
         { 'id': 15, 'title': 'Brainstorm', 'artist': 'Carl Craig', 'key': '08B' },
@@ -53,9 +51,8 @@ export class ListComponent implements OnInit {
     };
   }
 
-  addToLiveSet(event: Event) {
-    console.log('add button clicked');
-    console.log(event);
+  addToLiveSet(id: string) {
+    console.log(id);
   }
 
   trackMenu(event: Event) {
