@@ -4,7 +4,6 @@ import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
-// import { allTracks } from '../../data/trackData';
 
 @Injectable()
 export class ListService {
@@ -16,13 +15,13 @@ export class ListService {
   }
 
   getTracks(listName: string): Observable<Track[]> {
-    return this._http.get('../../data/trackData.json')
+    return this._http.get('app/data/trackData.json')
       .map(res => res.json());
   }
 
-  // addTrackToCurrentSet(track: Array<any>) {
-  //   this.tracks.push(track);
-  //   console.log(this.tracks);
-  // };
+  addTrackToCurrentSet(track: Array<any>) {
+    this.tracks.push(track);
+    console.log(this.tracks);
+  };
 
 }

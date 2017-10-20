@@ -17,6 +17,7 @@ import { MatListModule } from '@angular/material';
 import { ListComponent } from './list/list.component';
 import { ListService } from './services/list/list.service';
 import { HttpModule } from '@angular/http';
+import { AllTracks } from './data/trackData';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},

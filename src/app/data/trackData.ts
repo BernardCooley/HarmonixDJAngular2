@@ -1,4 +1,4 @@
-export const allTracks = [
+export const AllTracks = [
     { 'id': 1, 'title': 'Acidic Sky', 'artist': 'Tape Twelve', 'key': '11B' },
     { 'id': 2, 'title': 'Man with the red face', 'artist': 'Laurent Garnier', 'key': '05A' },
     { 'id': 3, 'title': 'Brainstorm', 'artist': 'Carl Craig', 'key': '08B' },
@@ -17,6 +17,4 @@ export const allTracks = [
     { 'id': 16, 'title': 'Acidic Sky', 'artist': 'Tape Twelve', 'key': '11B' },
     { 'id': 17, 'title': 'Man with the red face', 'artist': 'Laurent Garnier', 'key': '05A' },
     { 'id': 18, 'title': 'Brainstorm', 'artist': 'Carl Craig', 'key': '08B' }
-  ];
-
-  export const currentSet = [];
+  ]
