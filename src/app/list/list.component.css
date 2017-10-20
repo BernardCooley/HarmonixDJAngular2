@@ -11,17 +11,6 @@
     margin: auto;
 }
 
-.key {
-    float: right;
-}
-
-.listButton {
-    background: none;
-    text-align: left;
-    outline: 0;
-    border: 0;
-}
-
 .optionsColumn {
     top: 14px;
 }
@@ -30,8 +19,37 @@
     background-color: rgba(215, 241, 248, 0.50);
     color: #000044;
     border-bottom: 2px solid gray;
+    height: 110px;
 }
 
 .tableBody {
     border-top:2px solid gray;
+}
+
+.row {
+    margin-left: 0;
+}
+
+.keyAndAdd {
+    display: block;
+    margin: auto;
+}
+
+.key {
+    float: left;
+    margin-top: 33px;
+    margin-left: 72px;
+}
+
+.listButton {
+    background: none;
+    outline: 0;
+    border: 0;
+    float: right;
+    margin: auto;
+    margin-top: 15px;
+}
+
+td {
+    height: 100%;
 }
