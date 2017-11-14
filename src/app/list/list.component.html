@@ -1,39 +1,23 @@
 <div class="listContainer">
   <table class="table">
     <thead>
-      <tr *ngIf="showTitle" class="tableRow">
-        <td>
-          <h3>Artist</h3>
-        </td>
-        <td>
-          <h3>Title</h3>
-        </td>
-        <td>
-          <h3>Key</h3>
-        </td>
-      </tr>
     </thead>
     <tbody class="tableBody">
-      <tr class="tableRow" *ngFor="let listItem of list">
-        <td>
-          <h3 class="row artist">{{listItem.artist}}</h3>
-          <h4 class="row track">{{listItem.title}}</h4>
+      <tr class="tableRow" *ngFor="let track of allTracks">
+        <td class="artistTitleTd">
+          <h3 class="row artist">{{track.artist}}</h3>
+          <h4 class="row track">{{track.title}}</h4>
         </td>
-        <td class="keyAndAdd">
-          <h3 class="key">{{listItem.key}}</h3>
-          <button *ngIf="addButton" class="listButton" (click)="addToLiveSet(listItem)">
-                  <svg fill="#003366" height="55" viewBox="0 0 24 24" width="55" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
-                    <path d="M0 0h24v24H0z" fill="none"/>
-                  </svg>
-                  </button>
-          <button *ngIf="deleteButton" class="listButton" (click)="removeFromLiveSet(listItem)">
-                  <svg fill="#003366" height="55" viewBox="0 0 24 24" width="55" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <defs><path d="M0 0h24v24H0z" id="a"/></defs>
-                    <clipPath id="b"><use overflow="visible" xlink:href="#a"/></clipPath>
-                    <path clip-path="url(#b)" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"/>
-                </svg>
-              </button>
+        <td class="">
+          <h3 class="">{{track.key}}</h3>
+        </td>
+        <td>
+        <button *ngIf="true" class="listButton" (click)="addToTracklist(track)">
+          <img id="addIcon" src="/assets/images/add.png" alt="">
+        </button>
+        <button *ngIf="true" class="listButton" (click)="trackMenu(event)">
+          <img id="menuIcon" src="/assets/images/menu.png" alt="">
+        </button>
         </td>
       </tr>
     </tbody>

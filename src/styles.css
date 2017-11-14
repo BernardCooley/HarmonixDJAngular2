@@ -2,7 +2,7 @@ body {
     font-family: "arial", "Times New Roman", Georgia, Serif;
     /* background-color: lightblue; */
     /* background-image: url("/assets/images/beach.jpg") no-repeat center center fixed; */
-    background: url(/assets/images/beach.jpg) no-repeat center center fixed; 
+    /* background: url(/assets/images/beach.jpg) no-repeat center center fixed;  */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -11,13 +11,13 @@ body {
 
 .loginRegLinks {
     font-size: 15px;
-    color: gray;
+    /* color: gray; */
     position: absolute;
     bottom: 10px;
 }
 
 .redBox {
-    border: 1px solid red;
+    border: 2px solid red;
 }
 
 .sticky {
@@ -43,19 +43,14 @@ input[type="text"]
 }
 
 .clearfix {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
+    overflow: auto;
 }
 
 .ListName {
     text-align: center;
     position: relative;
     top: 10px;
-    background-color: rgba(162, 210, 240, 0.62);
+    /* background-color: rgba(162, 210, 240, 0.62); */
     line-height: 50px;
 }
 

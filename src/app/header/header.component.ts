@@ -17,7 +17,8 @@ export class HeaderComponent implements OnInit {
       { 'title': 'Play Set', 'link': '/playSet'},
       { 'title': 'Track Management', 'link': '/trackManagement'},
       { 'title': 'Set Management', 'link': '/setManagement' },
-      { 'title': 'Help', 'link': '/help' }
+      { 'title': 'Help', 'link': '/help' },
+      { 'title': 'All Tracks', 'link': '/allTracksList' }
     ]
   }
 

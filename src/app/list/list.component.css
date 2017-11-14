@@ -16,8 +16,8 @@
 }
 
 .tableRow {
-    background-color: rgba(215, 241, 248, 0.50);
-    color: #000044;
+    /* background-color: rgba(215, 241, 248, 0.50); */
+    /* color: #000044; */
     border-bottom: 2px solid gray;
     height: 110px;
 }
@@ -28,11 +28,6 @@
 
 .row {
     margin-left: 0;
-}
-
-.keyAndAdd {
-    display: block;
-    margin: auto;
 }
 
 .key {
@@ -47,9 +42,32 @@
     border: 0;
     float: right;
     margin: auto;
-    margin-top: 15px;
+    height: 50px;
+    width: 50px;
 }
 
 td {
     height: 100%;
+    padding: 10px 0 0 8px;
+}
+
+#menuIcon {
+    height: 30px;
+    position: relative;
+    top: 10px;
+}
+
+#addIcon {
+    height: 48px;
+    position: relative;
+    top: 10px;
+}
+
+.artist, .track {
+    margin-top: 0;
+}
+
+.artistTitleTd {
+    padding-top: 13px;
+    padding-bottom: 5px;
 }

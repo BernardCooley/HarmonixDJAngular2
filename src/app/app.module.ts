@@ -16,8 +16,11 @@ import { SlideMenuModule } from './custom_node_modules/cuppa-ng2-slidemenu/cuppa
 import { MatListModule } from '@angular/material';
 import { ListComponent } from './list/list.component';
 import { ListService } from './services/list/list.service';
+import { TracksService } from './services/tracks/tracks.service';
+import { TracklistService } from './services/tracklist/tracklist.service';
 import { HttpModule } from '@angular/http';
 import { AllTracks } from './data/trackData';
+import { AllTracksListComponent } from './all-tracks-list/all-tracks-list.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -27,7 +30,8 @@ const appRoutes: Routes = [
   {path: 'playSet', component: PlaySetComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'trackManagement', component: TrackManagementComponent},
-  {path: 'setManagement', component: SetManagementComponent}
+  {path: 'setManagement', component: SetManagementComponent},
+  {path: 'allTracksList', component: AllTracksListComponent}
 ];
 
 @NgModule({
@@ -41,7 +45,8 @@ const appRoutes: Routes = [
     RegisterComponent,
     TrackManagementComponent,
     SetManagementComponent,
-    ListComponent
+    ListComponent,
+    AllTracksListComponent
     ],
   imports: [
     BrowserModule,
@@ -53,7 +58,7 @@ const appRoutes: Routes = [
     MatListModule,
     HttpModule
   ],
-  providers: [ListService],
+  providers: [ListService, TracksService, TracklistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
