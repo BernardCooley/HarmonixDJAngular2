@@ -21,6 +21,12 @@ import { TracklistService } from './services/tracklist/tracklist.service';
 import { HttpModule } from '@angular/http';
 import { AllTracks } from './data/trackData';
 import { AllTracksListComponent } from './all-tracks-list/all-tracks-list.component';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AuthService } from './services/auth/auth.service';
+import { environment } from '../environments/environment';
+
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -56,9 +62,13 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     MatListModule,
-    HttpModule
+    HttpModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
+
   ],
-  providers: [ListService, TracksService, TracklistService],
+  providers: [ListService, TracksService, TracklistService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

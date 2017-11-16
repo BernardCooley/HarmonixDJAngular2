@@ -19,6 +19,8 @@ export class ListComponent implements OnInit {
       this.allTracks = allTracks;
       // console.log(this.allTracks);
     });
+
+    // _tracksService.getAllTracks();
   }
 
   addToTracklist(track: any) {

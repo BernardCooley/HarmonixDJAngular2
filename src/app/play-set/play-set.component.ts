@@ -12,9 +12,9 @@ export class PlaySetComponent implements OnInit {
   allTracks = [];
 
   constructor(_tracksService: TracksService) {
-    _tracksService.getAllTracks().subscribe(allTracks => {
-      this.allTracks = allTracks;
-    });
+    // _tracksService.getAllTracks().subscribe(allTracks => {
+    //   this.allTracks = allTracks;
+    // });
   }
 
   ngOnInit() {

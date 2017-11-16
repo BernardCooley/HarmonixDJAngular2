@@ -12,10 +12,10 @@ export class AllTracksListComponent implements OnInit {
   allTracks = [];
 
   constructor(_tracksService: TracksService) {
-    _tracksService.getAllTracks().subscribe(allTracks => {
-      this.allTracks = allTracks;
-      // console.log(this.allTracks);
-    });
+    // _tracksService.getAllTracks().subscribe(allTracks => {
+    //   this.allTracks = allTracks;
+    //   // console.log(this.allTracks);
+    // });
   }
 
   ngOnInit() {
