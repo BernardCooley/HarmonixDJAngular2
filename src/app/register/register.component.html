@@ -1,29 +1,19 @@
 <div class="container">
-  <h2>Registration</h2>
-
-  <br>
-  <form #form="ngForm" (ngSubmit)="submitForm(form.value)" novalidate>
-    <div class="form-group">
-      <input class="form-control" type="text" focus="true" ng-model name="fName" required placeholder="First Name">
-    </div>
-    <div class="form-group">
-      <input class="form-control" type="text" focus="true" ng-model name="lName" required placeholder="Last Name">
-    </div>
-    <div class="form-group">
-      <input class="form-control" type="text" focus="true" ng-model name="email" required placeholder="Email">
-    </div>
-    <div class="form-group">
-      <input class="form-control" type="text" focus="true" ng-model name="username" required placeholder="Username">
-    </div>
-    <div class="form-group">
-      <input class="form-control" type="text" focus="true" ng-model name="password" required placeholder="Password">
-    </div>
-    <div class="form-group">
-      <input class="form-control" type="text" focus="true" ng-model name="confirmPassword" required placeholder="Confirm Password">
-    </div>
-
-    <button id="registerBtn" class="btn btn-info" type="submit">Register</button>
-    <br>
-    <a class="loginRegLinks" routerLink="/login">Already registered?......<strong>Log In</strong></a>
-  </form>
-</div>
+    <form name="registerForm" novalidate autocomplete="off" [formGroup]='registerForm' (submit)='register()'>
+      <h2>Register</h2>
+      <br>
+      <input #firstName class="form-control" focus="true" type="text" name="firstName" required placeholder="First Name" formControlName='firstName'>
+      <br>
+      <input #lastName class="form-control" focus="true" type="text" name="lastName" required placeholder="Last Name" formControlName='lastName'>
+      <br>
+      <input #djName class="form-control" focus="true" type="text" name="djName" required placeholder="DJ Name" formControlName='djName'>
+      <br>
+      <input #emailAddress class="form-control" type="email" name="emailAddress" required placeholder="Email" formControlName='emailAddress'>
+      <br>
+      <input #username class="form-control" focus="true" type="text" name="username" required placeholder="Username" formControlName='username'>
+      <br>
+      <input #password class="form-control" type="password" name="password" required placeholder="Password" formControlName='password'>
+      <br>
+      <button id="registerBtn" name="register" type="submit" class="btn btn-info">Register</button>
+      <br>
+    </form>

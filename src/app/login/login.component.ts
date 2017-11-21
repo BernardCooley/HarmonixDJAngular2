@@ -10,12 +10,12 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  public form: FormGroup;
+  public signInForm: FormGroup;
   public user$ = this._authService.user;
   public isLoggedIn;
 
   constructor(private _formBuilder: FormBuilder, private _authService: AuthService, private router: Router) {
-    this.form = this._formBuilder.group({
+    this.signInForm = this._formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
@@ -27,16 +27,8 @@ export class LoginComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-  }
-
-  // login(username: String, password: String): void {
-  //   console.log('username: ' + username);
-  //   console.log('password: ' + password);
-  // }
-
   login() {
-    const inputValue = this.form.value;
+    const inputValue = this.signInForm.value;
     
     this._authService.login(inputValue.username, inputValue.password)
       .subscribe(
@@ -47,6 +39,9 @@ export class LoginComponent implements OnInit {
 
   loginWithGoogle() {
     this._authService.loginWithGoogle();
+  }
+
+  ngOnInit() {
   }
 
 }

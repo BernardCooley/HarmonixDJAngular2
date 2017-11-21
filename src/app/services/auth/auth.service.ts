@@ -14,11 +14,21 @@ export class AuthService {
     this.user = _angularFireAuth.authState;
   }
 
-  
-  login(email, password): Observable<any> {
+  login(username, password): Observable<any> {
     return Observable.fromPromise(
-      this._angularFireAuth.auth.signInWithEmailAndPassword(email, password)
+      this._angularFireAuth.auth.signInWithEmailAndPassword(username, password)
     );
+  }
+
+  register(email, password): Observable<any> {
+    // console.log(email, password);
+    return Observable.fromPromise(
+      this._angularFireAuth.auth.createUserWithEmailAndPassword(email, password)
+    );
+  }
+
+  registerUserDetails(firstName, lastName, djName, username) {
+    
   }
 
   loginWithGoogle() {
