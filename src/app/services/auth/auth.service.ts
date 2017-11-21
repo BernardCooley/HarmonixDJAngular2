@@ -14,6 +14,7 @@ export class AuthService {
     this.user = _angularFireAuth.authState;
   }
 
+  
   login(email, password): Observable<any> {
     return Observable.fromPromise(
       this._angularFireAuth.auth.signInWithEmailAndPassword(email, password)
