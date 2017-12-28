@@ -9,26 +9,33 @@ import 'rxjs/add/operator/map';
 export class AuthService {
 
   public user: Observable<firebase.User>;
+  public userId: string;
 
   constructor(private _angularFireAuth: AngularFireAuth) {
     this.user = _angularFireAuth.authState;
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.userId = user.uid;
+      }
+    });
   }
 
-  login(username, password): Observable<any> {
+  logout() {
     return Observable.fromPromise(
-      this._angularFireAuth.auth.signInWithEmailAndPassword(username, password)
+      this._angularFireAuth.auth.signOut());
+  }
+
+  login(email, password): Observable<any> {
+    return Observable.fromPromise(
+      this._angularFireAuth.auth.signInWithEmailAndPassword(email, password)
     );
   }
 
   register(email, password): Observable<any> {
-    // console.log(email, password);
     return Observable.fromPromise(
       this._angularFireAuth.auth.createUserWithEmailAndPassword(email, password)
     );
-  }
-
-  registerUserDetails(firstName, lastName, djName, username) {
-    
   }
 
   loginWithGoogle() {
@@ -37,6 +44,10 @@ export class AuthService {
 
   isAuthenticated(): Observable<boolean> {
     return this.user.map(user => user && user.uid !== undefined);
+  }
+
+  getUID() {
+    return this.userId;
   }
 
 }

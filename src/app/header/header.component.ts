@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { AuthService } from '../services/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +10,9 @@ import {Router} from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   private menuItemsArray: any[];
+  public $user = this._authService.user;
 
-  constructor(public router: Router) {
+  constructor(public router: Router, private _authService: AuthService) {
     this.menuItemsArray = [
       { 'title': 'Login', 'link': '/login' },
       { 'title': 'Register', 'link': '/register' },
@@ -18,22 +20,37 @@ export class HeaderComponent implements OnInit {
       { 'title': 'Track Management', 'link': '/trackManagement'},
       { 'title': 'Set Management', 'link': '/setManagement' },
       { 'title': 'Help', 'link': '/help' },
-      { 'title': 'All Tracks', 'link': '/allTracksList' }
+      { 'title': 'All Tracks', 'link': '/allTracksList' },
+      { 'title': 'Logout', 'link': '/login' }
     ]
   }
 
   public onMenuClose() {
-    console.log('menu closed');
+
   }
 
   public onMenuOpen() {
-    console.log('menu Opened');
+
   }
 
   private onItemSelect(item: any) {
-    console.log(item);
+    if(item.title === 'Logout') {
+      this._authService.logout().subscribe(
+        success => this.router.navigate(['/login']),
+        error => alert(error)
+      );
+    }
+    if(item.title === 'Login') {
+      this.isLoggedIn();
+    }
     this.router.navigate([item.link]);
   }
+
+  isLoggedIn() {
+    this._authService.isAuthenticated().subscribe(
+      user => user ? console.log('logged in') : console.log('logged out')
+      
+    )}
 
   ngOnInit() {
   }

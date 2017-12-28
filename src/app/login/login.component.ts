@@ -11,7 +11,7 @@ import { RouterModule, Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   public signInForm: FormGroup;
-  public user$ = this._authService.user;
+  public $user = this._authService.user;
   public isLoggedIn;
 
   constructor(private _formBuilder: FormBuilder, private _authService: AuthService, private router: Router) {
@@ -19,12 +19,6 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
-
-    _authService.isAuthenticated().subscribe(
-      success => console.log('logged in'),
-      error => console.log('not logged in')
-    )
-
   }
 
   login() {
@@ -32,7 +26,10 @@ export class LoginComponent implements OnInit {
     
     this._authService.login(inputValue.username, inputValue.password)
       .subscribe(
-        success => this.router.navigate(['/register']),
+        success => {
+          this.router.navigate(['/playSet']),
+          console.log(this._authService.getUID())
+      },
         error => alert(error)
       );
   }
