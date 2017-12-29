@@ -3,25 +3,78 @@ import { Observable } from 'rxjs/Rx';
 import { Http } from '@angular/http';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
-declare var firebase: any;
+import * as firebase from 'firebase/app';
+
 
 @Injectable()
 export class TracksService {
 
-  constructor(private _http: Http) { }
+  public database = firebase.database();
+  private userProfileKey;
+  private updates = {};
+  private userData = {};
+  private basicUserData = {};
+  private data = {};
+
+  constructor(private _http: Http) {
+    
+  }
 
   getAllTracks(): Observable<any> {
     return this._http.get('https://firsttestproject-9dc14.firebaseio.com/tracks.json')
       .map(res => res.json());
   }
 
-  // getAllTracks() {
-  //   firebase.database().ref('/').on('child_added', (tracks) => {
-  //     console.log(tracks.val());
-  //     // return tracks.val();
-  //   })
-  // }
+  addNewUserProfile(uid, consent, dj_name) {
+    console.log('addNewUserProfile called');
+    this.data = {
+      uid: uid,
+      consent: consent,
+      dj_name: dj_name
+    };
 
+    this.update('userProfiles', this.data);
+  }
+
+  addNewTrack() {
+    this.data = {
+      consent: '',
+      dj_name: '',
+      email: '',
+      tracklists: [{
+        date: '1',
+        genre: '1',
+        id: '1',
+        location: '1',
+        venue: '1'
+      }],
+      tracks: [{
+        id: '1',
+        tracklistId: '1'
+      }]
+    };
+
+    this.update('userProfiles', this.data);
+  }
+
+  update(collection, data) {
+    this.userProfileKey = this.database.ref().child(collection).push().key;
+
+    this.updates['/' + collection + '/' + this.userProfileKey] = this.data;
+
+    return firebase.database().ref().update(this.updates);
+  }
+
+  writeUserData(artist, title) {
+    console.log('writeUserData clicked');
+    console.log(artist, title);
+    firebase.database().ref('tracks/').set(
+      {
+        artist: artist,
+        title: title
+      }
+    );
+  }
   
 
 }

@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         success => {
           this.router.navigate(['/playSet']),
-          console.log(this._authService.getUID())
+          this._authService.getUID()
       },
         error => alert(error)
       );

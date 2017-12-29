@@ -2,17 +2,13 @@
     <form name="registerForm" novalidate autocomplete="off" [formGroup]='registerForm' (submit)='register()'>
       <h2>Register</h2>
       <br>
-      <input #firstName class="form-control" focus="true" type="text" name="firstName" required placeholder="First Name" formControlName='firstName'>
-      <br>
-      <input #lastName class="form-control" focus="true" type="text" name="lastName" required placeholder="Last Name" formControlName='lastName'>
-      <br>
       <input #djName class="form-control" focus="true" type="text" name="djName" required placeholder="DJ Name" formControlName='djName'>
       <br>
       <input #emailAddress class="form-control" type="email" name="emailAddress" required placeholder="Email" formControlName='emailAddress'>
       <br>
-      <input #username class="form-control" focus="true" type="text" name="username" required placeholder="Username" formControlName='username'>
-      <br>
       <input #password class="form-control" type="password" name="password" required placeholder="Password" formControlName='password'>
+      <br>
+      <input #consent class="form-control" type="checkbox" name="consent" required placeholder="Consent" formControlName='consent'>
       <br>
       <button id="registerBtn" name="register" type="submit" class="btn btn-info">Register</button>
       <br>
