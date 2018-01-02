@@ -26,7 +26,7 @@ export class TracksService {
   }
 
   addNewUserProfile(uid, consent, dj_name) {
-    console.log('addNewUserProfile called');
+    console.log(uid);
     this.data = {
       uid: uid,
       consent: consent,
@@ -66,8 +66,8 @@ export class TracksService {
   }
 
   writeUserData(artist, title) {
-    console.log('writeUserData clicked');
-    console.log(artist, title);
+    // console.log('writeUserData clicked');
+    // console.log(artist, title);
     firebase.database().ref('tracks/').set(
       {
         artist: artist,

@@ -10,7 +10,7 @@ export class TracklistService {
   constructor(private _http: Http) { }
 
   addToTracklist(tracklistId: String) {
-    console.log('addToTracklist called');
+    // console.log('addToTracklist called');
   }
 
 }

@@ -24,7 +24,7 @@ export class ListComponent implements OnInit {
   }
 
   addToTracklist(track: any) {
-    console.log(track);
+    // console.log(track);
     this._tracklistService.addToTracklist('rgreg');
   }
 
@@ -33,8 +33,8 @@ export class ListComponent implements OnInit {
   }
   
   trackMenu(event: Event) {
-    console.log('menu button clicked');
-    console.log(event);
+    // console.log('menu button clicked');
+    // console.log(event);
   }
 
   ngOnInit() {

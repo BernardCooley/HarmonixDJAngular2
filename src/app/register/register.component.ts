@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   public registerForm: FormGroup;
   public user$ = this._authService.user;
   public isLoggedIn;
+  private newUserId;
 
   constructor(private _formBuilder: FormBuilder, private _authService: AuthService, private router: Router, private _tracksService: TracksService) {
     this.registerForm = this._formBuilder.group({
@@ -28,21 +29,25 @@ export class RegisterComponent implements OnInit {
   }
 
   public submitForm(form: any): void {
-    console.log(form);
+    // console.log(form);
   }
 
   register() {
     const inputValue = this.registerForm.value;
 
-    this._authService.register(inputValue.emailAddress, inputValue.password)
-    .subscribe(
-      success => {
-        // trying to return id before it has retrieved it
-        // use promise to wait until the account is created and then grab uid
-        
-        this._tracksService.addNewUserProfile(this._authService.getUID(), inputValue.consent, inputValue.djName)
+    this._authService.register(inputValue.emailAddress, inputValue.password).subscribe(
+      user => {
+        this.newUserId = user.uid;
+        this._tracksService.addNewUserProfile(this.newUserId, inputValue.consent, inputValue.djName)
+        // console.log(this.newUserId)
       },
-      error => alert(error)
+      // success => {
+        // console.log(this.newUserId)
+        // trying to assign id to something before it has been returned
+        // use observable/promise to wait until the account is created and then grab uid
+        
+        // this._tracksService.addNewUserProfile(this.newUserId, inputValue.consent, inputValue.djName)
+      // }
     );
   }
 
