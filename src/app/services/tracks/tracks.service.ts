@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import * as firebase from 'firebase/app';
+import { AuthService } from '../auth/auth.service';
 
 
 @Injectable()
@@ -17,7 +18,10 @@ export class TracksService {
   private data = {};
 
   constructor(private _http: Http) {
-    
+    var starCountRef = this.database.ref('userProfiles/');
+    starCountRef.on('value', function(snapshot) {
+      console.log(snapshot.val());
+    });
   }
 
   getAllTracks(): Observable<any> {
