@@ -26,6 +26,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AuthService } from './services/auth/auth.service';
 import { environment } from '../environments/environment';
+import { BannerComponent } from './banner/banner.component';
 
 
 const appRoutes: Routes = [
@@ -52,7 +53,8 @@ const appRoutes: Routes = [
     TrackManagementComponent,
     SetManagementComponent,
     ListComponent,
-    AllTracksListComponent
+    AllTracksListComponent,
+    BannerComponent
     ],
   imports: [
     BrowserModule,

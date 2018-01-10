@@ -16,12 +16,35 @@ export class TracksService {
   private userData = {};
   private basicUserData = {};
   private data = {};
+  private starCountRef;
 
   constructor(private _http: Http) {
-    var starCountRef = this.database.ref('userProfiles/');
-    starCountRef.on('value', function(snapshot) {
-      console.log(snapshot.val());
+    
+  }
+
+  getUserDjName(uid) {
+    var djName = '';
+    this.starCountRef = this.database.ref('userProfiles/' + uid);
+
+    this.starCountRef.once("value").then(function(snapshot) {
+      djName = snapshot.val().dj_name;
     });
+
+    return djName;
+
+
+    // return this.starCountRef.on("value").then(function(snapshot) {
+    //     return snapshot.val();
+    // }, function (errorObject) {
+    //     console.log("Failed: " + errorObject.code);
+    // });
+
+
+
+    // this.starCountRef.on('value', function(snapshot) {
+      
+    //   console.log(snapshot.val());
+    // });
   }
 
   getAllTracks(): Observable<any> {

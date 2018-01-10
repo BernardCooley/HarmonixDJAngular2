@@ -44,10 +44,18 @@ export class AuthService {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.userId = user.uid;
-        console.log(this.userId, 'before');
+        // console.log(this.userId, 'before');
         return this.userId;
       }
     });
+  }
+
+  getUserId(): Observable<any> {
+    return this.user;
+  }
+
+  getCurrentUser() {
+    return this.user;
   }
 
 }
