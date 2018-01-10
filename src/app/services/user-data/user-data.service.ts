@@ -26,17 +26,25 @@ export class UserDataService {
     // });
   }
 
-  getCurrentUserDjName(uid): string {
-    var currentUserDjName;
-    // console.log('getCurrentUserDjName called', uid);
+  getUserDjName(uid): string {
+    var djName;
     this.userProfileDBReference = this.database.ref('userProfiles/' + uid);
 
     this.userProfileDBReference.on('value', function(snapshot) {
-      // console.log(snapshot.val().dj_name);
-      currentUserDjName = snapshot.val().dj_name;
+      djName = snapshot.val().dj_name;
     });
-    // console.log(currentUserDjName)
-    return currentUserDjName;
+    return djName;
+  }
+
+  getUserTracks(uid) {
+    var tracks;
+    this.userProfileDBReference = this.database.ref('userProfiles/' + uid);
+
+    this.userProfileDBReference.on('value', function(snapshot) {
+      tracks = snapshot.val().tracks;
+      console.log(snapshot.val());
+    });
+    return tracks;
   }
 
   getAllTracks(): Observable<any> {

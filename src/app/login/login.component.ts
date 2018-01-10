@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   @Output() onLogin: EventEmitter<string> = new EventEmitter<string>();
   public signInForm: FormGroup;
-  public $user = this._authService.user;
+  public $user;
   public isLoggedIn;
 
   constructor(private _formBuilder: FormBuilder, private _authService: AuthService, private router: Router, private _userDataService: UserDataService) {
@@ -21,6 +21,18 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
+
+    this._authService.user.subscribe(
+      user => {
+        this.$user = user
+        // console.log('user from login', this.$user)
+      }
+    )
+  }
+
+  testUser() {
+    
+    // console.log(this.$user);
   }
 
   outputTest() {
@@ -33,7 +45,7 @@ export class LoginComponent implements OnInit {
     this._authService.login(inputValue.username, inputValue.password)
       .subscribe(
         success => {
-          this.router.navigate(['/playSet']),
+          this.router.navigate(['/home']),
           this._authService.getUID()
           // console.log(this._userDataService.getCurrentUserDjName(this._authService.getUID()))
           

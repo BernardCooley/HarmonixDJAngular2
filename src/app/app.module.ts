@@ -27,6 +27,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { UserDataService } from './services/user-data/user-data.service';
+import { HomeComponent } from './home/home.component';
+import { AppContainerComponent } from './app-container/app-container.component';
 
 
 const appRoutes: Routes = [
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'trackManagement', component: TrackManagementComponent},
   {path: 'setManagement', component: SetManagementComponent},
-  {path: 'allTracksList', component: AllTracksListComponent}
+  {path: 'allTracksList', component: AllTracksListComponent},
+  {path: 'home', component: HomeComponent}
 ];
 
 @NgModule({
@@ -53,7 +56,9 @@ const appRoutes: Routes = [
     TrackManagementComponent,
     SetManagementComponent,
     ListComponent,
-    AllTracksListComponent
+    AllTracksListComponent,
+    HomeComponent,
+    AppContainerComponent
     ],
   imports: [
     BrowserModule,

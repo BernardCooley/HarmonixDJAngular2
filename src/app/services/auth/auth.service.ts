@@ -14,10 +14,10 @@ export class AuthService {
   constructor(private _angularFireAuth: AngularFireAuth) {
     this.user = _angularFireAuth.authState;
 
-    firebase.auth().onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         this.userId = user.uid;
-        console.log('user Id', this.userId);
+        // console.log('user Id', this.userId);
         // return userId;
       }
     });
