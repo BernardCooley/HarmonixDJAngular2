@@ -35,7 +35,7 @@ export class HeaderComponent implements OnInit {
   getUserDjName() {
     this.uid = this._authService.getUID();
 
-    this.djName = this._userDataService.getCurrentUserDjName(this.uid);
+    // this.djName = this._userDataService.getCurrentUserDjName(this.uid);
     // console.log('dj name from header', this.djName);
   }
 
