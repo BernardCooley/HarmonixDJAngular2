@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -24,8 +25,8 @@ import { AllTracksListComponent } from './all-tracks-list/all-tracks-list.compon
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AuthService } from './services/auth/auth.service';
 import { environment } from '../environments/environment';
+import { UserDataService } from './services/user-data/user-data.service';
 
 
 const appRoutes: Routes = [
@@ -68,7 +69,7 @@ const appRoutes: Routes = [
     AngularFireAuthModule
 
   ],
-  providers: [ListService, TracksService, TracklistService, AuthService],
+  providers: [AuthService, ListService, TracksService, TracklistService, UserDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

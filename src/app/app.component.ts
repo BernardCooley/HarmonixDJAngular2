@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+
+  dataPassed(event:string):void {
+    console.log('datapassed called', event);
+  }
+
 }

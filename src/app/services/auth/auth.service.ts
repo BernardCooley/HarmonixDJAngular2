@@ -13,6 +13,16 @@ export class AuthService {
 
   constructor(private _angularFireAuth: AngularFireAuth) {
     this.user = _angularFireAuth.authState;
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.userId = user.uid;
+        console.log('user Id', this.userId);
+        // return userId;
+      }
+    });
+
+    // this.userId = this.getUID();
   }
 
   logout() {
@@ -41,13 +51,7 @@ export class AuthService {
   }
 
   getUID() {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.userId = user.uid;
-        console.log(this.userId, 'before');
-        return this.userId;
-      }
-    });
+    return this.userId;
   }
 
 }

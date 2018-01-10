@@ -1,5 +1,5 @@
 <div class="container">
-  <form name="signInForm" novalidate autocomplete="off" [formGroup]='signInForm' (submit)='login()'>
+  <form name="signInForm" novalidate autocomplete="off" [formGroup]='signInForm' (submit)='login(); outputTest()'>
     <h2>Sign In</h2>
     <br>
     <input #username class="form-control" focus="true" type="text" name="username" required placeholder="Username" formControlName='username'>

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth/auth.service';
 import { RouterModule, Router } from '@angular/router';
+import { UserDataService } from '../services/user-data/user-data.service';
 
 @Component({
   selector: 'app-login',
@@ -10,15 +11,20 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  @Output() onLogin: EventEmitter<string> = new EventEmitter<string>();
   public signInForm: FormGroup;
   public $user = this._authService.user;
   public isLoggedIn;
 
-  constructor(private _formBuilder: FormBuilder, private _authService: AuthService, private router: Router) {
+  constructor(private _formBuilder: FormBuilder, private _authService: AuthService, private router: Router, private _userDataService: UserDataService) {
     this.signInForm = this._formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
+  }
+
+  outputTest() {
+    this.onLogin.emit('output string');
   }
 
   login() {
@@ -29,6 +35,9 @@ export class LoginComponent implements OnInit {
         success => {
           this.router.navigate(['/playSet']),
           this._authService.getUID()
+          // console.log(this._userDataService.getCurrentUserDjName(this._authService.getUID()))
+          
+          // this._userDataService.getCurrentUserDjName(this._authService.getUID())
       },
         error => alert(error)
       );

@@ -8,19 +8,35 @@ import { AuthService } from '../auth/auth.service';
 
 
 @Injectable()
-export class TracksService {
+export class UserDataService {
 
   public database = firebase.database();
+  private userProfileKey;
   private updates = {};
   private userData = {};
   private basicUserData = {};
   private data = {};
-  private userProfileDBReference = this.database.ref('userProfiles/');
+  private currentUserData = {};
+  private userProfileDBReference;
 
   constructor(private _http: Http) {
-    // this.userProfileDBReference.on('value', function(snapshot) {
+    // var starCountRef = this.database.ref('userProfiles/');
+    // starCountRef.on('value', function(snapshot) {
     //   console.log(snapshot.val());
     // });
+  }
+
+  getCurrentUserDjName(uid): string {
+    var currentUserDjName;
+    // console.log('getCurrentUserDjName called', uid);
+    this.userProfileDBReference = this.database.ref('userProfiles/' + uid);
+
+    this.userProfileDBReference.on('value', function(snapshot) {
+      // console.log(snapshot.val().dj_name);
+      currentUserDjName = snapshot.val().dj_name;
+    });
+    // console.log(currentUserDjName)
+    return currentUserDjName;
   }
 
   getAllTracks(): Observable<any> {
@@ -36,10 +52,10 @@ export class TracksService {
       dj_name: dj_name
     };
 
-    this.update('userProfiles', this.data, uid);
+    this.update('userProfiles', this.data);
   }
 
-  addNewTrack(uid) {
+  addNewTrack() {
     this.data = {
       consent: '',
       dj_name: '',
@@ -57,11 +73,13 @@ export class TracksService {
       }]
     };
 
-    this.update('userProfiles', this.data, uid);
+    this.update('userProfiles', this.data);
   }
 
-  update(collection, data, uid) {
-    this.updates['/' + collection + '/' + uid] = this.data;
+  update(collection, data) {
+    this.userProfileKey = this.database.ref().child(collection).push().key;
+
+    this.updates['/' + collection + '/' + this.userProfileKey] = this.data;
 
     return firebase.database().ref().update(this.updates);
   }
