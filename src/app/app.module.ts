@@ -34,6 +34,8 @@ import { UserDataService } from './services/user-data/user-data.service';
 
 //environment
 import { environment } from '../environments/environment';
+import { ParentComponent } from './test-components/parent/parent.component';
+import { ChildComponent } from './test-components/child/child.component';
 
 
 const appRoutes: Routes = [
@@ -60,7 +62,9 @@ const appRoutes: Routes = [
     SetManagementPageComponent,
     AllTracksListComponent,
     HomePageComponent,
-    AppContainerComponent
+    AppContainerComponent,
+    ParentComponent,
+    ChildComponent
     ],
   imports: [
     BrowserModule,

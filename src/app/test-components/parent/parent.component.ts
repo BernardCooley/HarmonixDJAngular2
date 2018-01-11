@@ -1,0 +1,23 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-parent',
+  templateUrl: './parent.component.html',
+  styleUrls: ['./parent.component.css']
+})
+export class ParentComponent implements OnInit {
+
+  myCount: number = 10;
+  
+  constructor() {
+
+  }
+
+  countChange(event) {
+    this.myCount = event;
+  }
+
+  ngOnInit() {
+  }
+
+}
