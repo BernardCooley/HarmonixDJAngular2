@@ -25,7 +25,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { HelpComponent } from './pages/help/help.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ListComponent } from './components/list/list.component';
 import { AllTracksListComponent } from './components/all-tracks-list/all-tracks-list.component';
 
 //services
@@ -64,7 +63,6 @@ const appRoutes: Routes = [
     RegisterComponent,
     TrackManagementComponent,
     SetManagementComponent,
-    ListComponent,
     AllTracksListComponent,
     HomeComponent,
     AppContainerComponent
