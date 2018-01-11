@@ -29,9 +29,7 @@ import { AllTracksListComponent } from './components/all-tracks-list/all-tracks-
 
 //services
 import { AuthService } from './services/auth/auth.service';
-import { ListService } from './services/list/list.service';
 import { TracksService } from './services/tracks/tracks.service';
-import { TracklistService } from './services/tracklist/tracklist.service';
 import { UserDataService } from './services/user-data/user-data.service';
 
 //environment
@@ -81,7 +79,7 @@ const appRoutes: Routes = [
     AngularFireAuthModule
 
   ],
-  providers: [AuthService, ListService, TracksService, TracklistService, UserDataService],
+  providers: [AuthService, TracksService, UserDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
