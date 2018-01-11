@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppContainerComponent implements OnInit {
 
+  private inputValue;
+
   constructor() {}
+
+  emitValue(event) {
+    this.inputValue = event;
+  }
 
   ngOnInit() {
   }

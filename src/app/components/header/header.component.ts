@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 import { TracksService } from '../../services/tracks/tracks.service';
@@ -10,6 +10,9 @@ import { UserDataService } from '../../services/user-data/user-data.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  private outputValue: boolean;
+  @Output() outputEmitter: EventEmitter<any> = new EventEmitter<any>();
 
   private menuItemsArray: any[];
   public $user = this._authService.user;
@@ -30,6 +33,10 @@ export class HeaderComponent implements OnInit {
       { 'title': 'Test DB', 'link': '/register' }
     ]
 
+  }
+
+  emitOutputValue() {
+    this.outputEmitter.emit(this.outputValue = !this.outputValue);
   }
 
   getUserDjName() {
