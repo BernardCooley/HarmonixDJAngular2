@@ -5,11 +5,11 @@ import { RouterModule, Router } from '@angular/router';
 import { TracksService } from '../../services/tracks/tracks.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-register-page',
+  templateUrl: './register-page.component.html',
+  styleUrls: ['./register-page.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterPageComponent implements OnInit {
 
   public registerForm: FormGroup;
   public user$ = this._authService.user;

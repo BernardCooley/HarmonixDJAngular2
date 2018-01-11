@@ -14,15 +14,15 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 //pages & containers
 import { AppContainerComponent } from './app-container/app-container.component';
 import { AppComponent } from './app.component';
-import { PlaySetComponent } from './pages/play-set/play-set.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { TrackManagementComponent } from './pages/track-management/track-management.component';
-import { SetManagementComponent } from './pages/set-management/set-management.component';
-import { HomeComponent } from './pages/home/home.component';
+import { PlaySetPageComponent } from './pages/play-set-page/play-set-page.component';
+import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { TrackManagementPageComponent } from './pages/track-management-page/track-management-page.component';
+import { SetManagementPageComponent } from './pages/set-management-page/set-management-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 //components
-import { LoginComponent } from './pages/login/login.component';
-import { HelpComponent } from './pages/help/help.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { HelpPageComponent } from './pages/help-page/help-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AllTracksListComponent } from './components/all-tracks-list/all-tracks-list.component';
@@ -37,32 +37,29 @@ import { environment } from '../environments/environment';
 
 
 const appRoutes: Routes = [
-  {path: 'login', component: LoginComponent},
-  {path: 'help', component: HelpComponent},
-  {path: 'header', component: HeaderComponent},
-  {path: 'footer', component: FooterComponent},
-  {path: 'playSet', component: PlaySetComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'trackManagement', component: TrackManagementComponent},
-  {path: 'setManagement', component: SetManagementComponent},
-  {path: 'allTracksList', component: AllTracksListComponent},
-  {path: 'home', component: HomeComponent}
+  {path: 'login', component: LoginPageComponent},
+  {path: 'help', component: HelpPageComponent},
+  {path: 'playSet', component: PlaySetPageComponent},
+  {path: 'register', component: RegisterPageComponent},
+  {path: 'trackManagement', component: TrackManagementPageComponent},
+  {path: 'setManagement', component: SetManagementPageComponent},
+  {path: 'home', component: HomePageComponent}
 
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    HelpComponent,
+    LoginPageComponent,
+    HelpPageComponent,
     HeaderComponent,
     FooterComponent,
-    PlaySetComponent,
-    RegisterComponent,
-    TrackManagementComponent,
-    SetManagementComponent,
+    PlaySetPageComponent,
+    RegisterPageComponent,
+    TrackManagementPageComponent,
+    SetManagementPageComponent,
     AllTracksListComponent,
-    HomeComponent,
+    HomePageComponent,
     AppContainerComponent
     ],
   imports: [

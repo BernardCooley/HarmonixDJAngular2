@@ -3,11 +3,11 @@ import { TracksService } from '../../services/tracks/tracks.service';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-  selector: 'app-play-set',
-  templateUrl: './play-set.component.html',
-  styleUrls: ['./play-set.component.css']
+  selector: 'app-play-set-page',
+  templateUrl: './play-set-page.component.html',
+  styleUrls: ['./play-set-page.component.css']
 })
-export class PlaySetComponent implements OnInit {
+export class PlaySetPageComponent implements OnInit {
 
   allTracks = [];
 
