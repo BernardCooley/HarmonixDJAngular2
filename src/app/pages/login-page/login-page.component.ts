@@ -11,7 +11,7 @@ import { UserDataService } from '../../services/user-data/user-data.service';
 })
 export class LoginPageComponent implements OnInit {
 
-  @Output() onLogin: EventEmitter<string> = new EventEmitter<string>();
+  @Output() onLogin: EventEmitter<any> = new EventEmitter<any>();
   public signInForm: FormGroup;
   public $user;
   public isLoggedIn;
@@ -35,10 +35,6 @@ export class LoginPageComponent implements OnInit {
     // console.log(this.$user);
   }
 
-  outputTest() {
-    this.onLogin.emit('output string');
-  }
-
   login() {
     const inputValue = this.signInForm.value;
     
@@ -46,7 +42,8 @@ export class LoginPageComponent implements OnInit {
       .subscribe(
         success => {
           this.router.navigate(['/home']),
-          this._authService.getUID()
+          this._authService.getUID(),
+          this.onLogin.emit(this.$user)
           // console.log(this._userDataService.getCurrentUserDjName(this._authService.getUID()))
           
           // this._userDataService.getCurrentUserDjName(this._authService.getUID())

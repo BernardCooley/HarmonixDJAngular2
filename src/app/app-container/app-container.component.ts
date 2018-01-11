@@ -8,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class AppContainerComponent implements OnInit {
 
   private inputValue;
+  private user;
 
   constructor() {}
 
   emitValue(event) {
     this.inputValue = event;
+  }
+
+  getUser(event) {
+    this.user = event;
+    console.log('user from container', this.user);
   }
 
   ngOnInit() {
