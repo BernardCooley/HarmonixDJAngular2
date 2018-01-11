@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TracksService } from '../services/tracks/tracks.service';
+import { TracksService } from '../../services/tracks/tracks.service';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
