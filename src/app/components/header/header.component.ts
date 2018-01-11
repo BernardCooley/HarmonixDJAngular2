@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth/auth.service';
-import { TracksService } from '../services/tracks/tracks.service';
-import { UserDataService } from '../services/user-data/user-data.service';
+import { AuthService } from '../../services/auth/auth.service';
+import { TracksService } from '../../services/tracks/tracks.service';
+import { UserDataService } from '../../services/user-data/user-data.service';
 
 @Component({
   selector: 'app-header',

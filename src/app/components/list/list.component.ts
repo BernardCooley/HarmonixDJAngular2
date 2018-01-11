@@ -1,6 +1,6 @@
 import { Injectable, Component, OnInit, Input } from '@angular/core';
-import { TracksService } from '../services/tracks/tracks.service';
-import { TracklistService } from '../services/tracklist/tracklist.service';
+import { TracksService } from '../../services/tracks/tracks.service';
+import { TracklistService } from '../../services/tracklist/tracklist.service';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
