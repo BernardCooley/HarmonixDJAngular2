@@ -41,6 +41,7 @@ const appRoutes: Routes = [
   {path: 'setManagement', component: SetManagementComponent},
   {path: 'allTracksList', component: AllTracksListComponent},
   {path: 'home', component: HomeComponent}
+  
 ];
 
 @NgModule({
